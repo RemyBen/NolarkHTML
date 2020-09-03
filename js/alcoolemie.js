@@ -70,3 +70,19 @@ function getSanction(alcoolemie){
         return '6 points + 2 ans de prison + suspension 3 ans + stage de sensibilisation';
     }
 }
+
+/**
+ * Fonction qui retourne une valeure entière récupérée via
+ * window.document.querySelector(id)
+ * 
+ * @param {type} id
+ * @returns {Number}
+ */
+function getInt(id){
+    let valeur = parseInt(window.document.querySelector(id).value);
+    if (isNaN(valeur)){
+        return 0;
+    } else {
+        return valeur;
+    }
+}

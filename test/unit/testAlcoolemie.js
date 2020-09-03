@@ -29,3 +29,14 @@ MesTestsUnitaires.prototype.testsGetSanction = function() {
     assertEquals('Moins de 0,8 g/l de sand', '6 points + suspension 3 ans', getSanction(0.4));
     assertEquals('A partir de 0,8 g/l de sang', '6 points + 2 ans de prison + suspension 3 ans + stage de sensibilisation', getSanction(0.8));
 };
+
+MesTestsUnitaires.prototype.testsGetInt = function() {
+    /*:DOC +=
+     * <input type="number" id="num_verre" value="1">
+     * <input type="number" id="num_poids" value="100">
+     */
+    assertTrue('Test poids 100 Kg', 100 === getInt('#num_poids'));
+    assertTrue('Test 1 verre', 1 === getInt('#num_verre'));
+    window.document.querySelector('#num_verre').value = 'texte';
+    assertTrue('Test erreur saisie verre', 0 === getInt('#num_verre'));
+}
