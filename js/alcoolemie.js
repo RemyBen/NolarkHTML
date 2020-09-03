@@ -7,5 +7,6 @@
  */
 
 function getAlcoolPur(nbVerres){
+    const uniteAlcool = 10;
     return nbVerres * 10;
 }
