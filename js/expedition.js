@@ -12,6 +12,25 @@ function getFrais(poids){
         somme += (poids - 1000) * 2.5;
         return (somme).toFixed(2) + ' €';
     }
-
 }
 
+window.addEventListener('load', function () {
+    // tabEvents est une collection d'évenements
+    let tabEvents = ['keyup', 'click'];
+
+    // tabInputs est une collection de <input>
+    let tabInputs = window.document.querySelectorAll('input');
+
+    // Parcours de tabInputs en s'appuyant sur le nombre de <input> et sur tabEvents
+    for (let i = 0; i < tabInputs.length; i++) {
+        for (let j = 0; j < tabEvents.length; j++) {
+            // Ajout d'un Listener sur tous les <input> sur les évènements listés dans tabEvents
+            tabInputs[i].addEventListener(tabEvents[j], affichePrixExpedition);
+        }
+    }
+});
+
+function affichePrixExpedition(){
+    let poids = parseInt(window.document.querySelector('#poids').value);
+    window.document.querySelector('#prix').innerHTML = getFrais(poids);
+}
