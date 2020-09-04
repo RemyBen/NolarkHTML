@@ -49,25 +49,27 @@ and open the template in the editor.
             <div>
                 <label>Poids : </label><input type="number" id="num_poids">
             </div>
-            <div id="sexe">
+            <fieldset id="sexe_title">
+                <legend>Sexe : </legend>
+                
                 <input type="radio" id="homme" name="sexe" value="homme" checked>
-                <label for="homme">Homme</label>
-            </div>
+                <label for="sexe">Homme</label>
             <div>
                 <input type="radio" id="femme" name="sexe" value="femme">
-                <label for="femme">Femme</label>
+                <label for="sexe">Femme</label>
             </div>
+            </fieldset>
             <label>Nombre de verres bus : </label><input type="number" id="num_verre">
             
             <div>
-                <label>Alcoolémie : </label>
+                <h3>Alcoolémie : <a id="alcoolemie"></a></h3>
             </div>
             
             <div>
-                <label>Amende : </label>
+                <h3>Amende : </h3>
             </div>
             <div>
-                <label>Sanction : </label>
+                <h3>Sanction : </h3>
             </div>
         </section>
     </body>

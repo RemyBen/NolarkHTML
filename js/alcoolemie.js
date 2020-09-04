@@ -43,6 +43,33 @@ function getAlcoolemie(sexe, poids, nbVerres){
     }
 }
 
+window.addEventListener('load', function () {
+    // tabEvents est une collection d'évenements
+    let tabEvents = ['keyup', 'click'];
+
+    // tabInputs est une collection de <input>
+    let tabInputs = window.document.querySelectorAll('input');
+
+    // Parcours de tabInputs en s'appuyant sur le nombre de <input> et sur tabEvents
+    for (let i = 0; i < tabInputs.length; i++) {
+        for (let j = 0; j < tabEvents.length; j++) {
+            // Ajout d'un Listener sur tous les <input> sur les évènements listés dans tabEvents
+            tabInputs[i].addEventListener(tabEvents[j], afficheAlcoolemie);
+        }
+    }
+});
+
+function afficheAlcoolemie(){
+    let sexe = getString('#sexe_title input[type="radio"]:checked');
+    let poids = getInt('#num_poids');
+    let nbVerres = getInt('#num_verre');
+    afficheRecup(getAlcoolemie(sexe, poids, nbVerres));
+}
+
+function afficheRecup(param){
+    window.document.querySelector("#alcoolemie").innerHTML = param;
+}
+
 /**
  * Fonction qui retourne l'amende encourue en fonction de l'alcoolémie * 
  * 
