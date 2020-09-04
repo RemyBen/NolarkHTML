@@ -1,0 +1,9 @@
+#text_prix {
+    text-align: center;
+}
+
+fieldset p {
+    padding: 10px;
+    text-align: right;
+    margin-right: 60px;
+}
